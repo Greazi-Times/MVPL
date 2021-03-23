@@ -1,0 +1,9 @@
+name: MavenBasePlugin
+version: 1.0-SNAPSHOT
+description: This plugin is the core of MagicValley
+author: Greazi
+website: https://github.com/Greazi-Times
+
+depend: []
+softdepend: [Vault]
+main: me.greazi.MavenBasePlugin.Main

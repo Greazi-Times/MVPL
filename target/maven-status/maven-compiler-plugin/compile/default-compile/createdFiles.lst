@@ -1,0 +1,6 @@
+me\greazi\MagicValley\Main.class
+me\greazi\MagicValley\api\FileAPI.class
+me\greazi\MagicValley\api\ColorAPI.class
+me\greazi\MagicValley\command\MainCommand.class
+me\greazi\MagicValley\api\PrefixAPI.class
+me\greazi\MagicValley\modules\FileManagement.class
