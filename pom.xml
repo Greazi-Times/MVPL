@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.greazi</groupId>
-    <artifactId>MagicValley-Plugin</artifactId>
+    <artifactId>MagicValley</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>MagicValley-Plugin</name>
+    <name>MagicValley2.0</name>
     <description>This plugin is the core of MagicValley</description>
 
     <properties>
