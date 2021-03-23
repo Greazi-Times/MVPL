@@ -48,19 +48,34 @@ Prefixes:
 #  Messages can **NOT** be empty this will brake the plugin.
 #
 #  Why can't messages be empty?
-#  Messages can not be empty because it will break the plugin!
+#  Messages can **not** be empty this will cause the plugin to break
 #
 # !-------------------------------------------------------------------------------------------------!
 Messages:
-  #
-  # Lockdown is a command to lock the server
-  #
+  # Lockdown is a feature that makes it possible to lock the server.
   Lockdown:
+    # The message that will be send to the user when the lockdown is enabled
     Enable: '&cLockdown &ahas been enabled'
+    # The message that will be send to the user
     Disable: '&cLockdown &4has been disabled'
 
+  # No permission message this message will always be send if someone has no permission!
   NoPermission: '&cNo permission!'
 
+# !-------------------------------------------------------------------------------------------------!
+#   Broadcast Section
+# !-------------------------------------------------------------------------------------------------!
+#
+#  The broadcast section contains all the broadcasts of the plugin.
+#  All the messages can be changed keep in mind these require a reload.
+#
+#  Every command has there own section.
+#  Messages can **NOT** be empty this will brake the plugin.
+#
+#  Why can't messages be empty?
+#  Messages can **not** be empty this will cause the plugin to break
+#
+# !-------------------------------------------------------------------------------------------------!
 Broadcast:
   Lockdown:
     Enable: '&cLockdown &ahas been enabled by &c%player%'
