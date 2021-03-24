@@ -15,19 +15,38 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         try {
-            /*
-              This will be executed on the plugin start
-             */
-            // Starts timer when starting up
+            // Now needs to be done via this ugly way as the original way did lead to a loading error.
+            instance = this;
+
+            // ------------------------------------------------------------------------------------------------------ //
+            //                                                Metrics                                                 //
+            // ------------------------------------------------------------------------------------------------------ //
+
+            // Safes the current time in milliseconds
             long l1 = System.currentTimeMillis();
+
             // Sends starting message of the plugin
-            // TODO change "PluginName" to the name of the plugin
-            System.out.println("§8[§9PluginName§7-§bPlugin§8] §aStarting...");
-            // Registers all commands
-            registerCommands();
-            // This wil register all events
-            registerEvents();
+            System.out.println("§8 ");
+            System.out.println("§8[§9MagicValley§7-§bPlugin§8] §aStarting...");
+
+            // Starts the file setup (Checks if the files exists. When they don't exists it will create the files.
             File.file.setup(this);
+
+            // ------------------------------------------------------------------------------------------------------ //
+            //                                                Features                                                //
+            // ------------------------------------------------------------------------------------------------------ //
+
+            // Registers commands
+            registerCommands();
+
+            // Registers all the events
+            registerEvents();
+
+            // ------------------------------------------------------------------------------------------------------ //
+            //                                                Metrics Final                                           //
+            // ------------------------------------------------------------------------------------------------------ //
+
+            // Sends figlit plugin name
             System.out.println("§8 ");
             System.out.println("§9   __  ___          _    _   __     ____        §7      §b   ___  __          _    ");
             System.out.println("§9  /  |/  /__ ____ _(_)__| | / /__ _/ / /__ __ __§7  ____§b  / _ \\/ /_ _____ _(_)__ ");
@@ -36,15 +55,23 @@ public class Main extends JavaPlugin implements Listener {
             System.out.println("§9                                                      §8          §b              /____/          ");
             System.out.println("§9Running Version§b: §a" + getDescription().getVersion());
             System.out.println("§8 ");
-            long l2 = System.currentTimeMillis();
-            long l3 = l2 - l1;
-            // TODO change "PluginName" to the name of the plugin
-            System.out.println("§8[§9PluginName§7-§bPlugin§8] §aStarted! §8took §c" + l3 + "ms§8");
 
+            // Safes the current time in milliseconds
+            long l2 = System.currentTimeMillis();
+
+            // Calculates the time it took to start the plugin
+            long l3 = l2 - l1;
+
+            // Sends the final startup message that contains the time the startup started
+            System.out.println("§8[§9MagicValley§7-§bPlugin§8] §aStarted! §8took §c" + l3 + "ms§8");
+            System.out.println("§8 ");
+
+            // This will be triggered when the plugin failed to load
         } catch (final Exception e) {
         // ------------------------------------------------------------------------------------------------------ //
         //                                              Failed loading                                            //
         // ------------------------------------------------------------------------------------------------------ //
+            System.out.println("§8 ");
             System.out.println("§8[§9MagicValley§7-§bPlugin§8] §aDisabeling...");
             System.out.println("§8 ");
             System.out.println("§c The plugin was unable to load!");
@@ -54,15 +81,13 @@ public class Main extends JavaPlugin implements Listener {
             System.out.println("§8[§9MagicValley§7-§bPlugin§8] §cDisabeling...");
             System.out.println("§8 ");
             System.out.println("§8[§9MagicValley§7-§bPlugin§8] §4Disabled!");
+            System.out.println("§8 ");
         }
     }
 
 
     @Override
     public void onDisable() {
-        /*
-         * This will be executed when the plugin is disabled
-         */
         // Disable message when the plugin gets disabled
         long l1 = System.currentTimeMillis();
         System.out.println("§8[§9MagicValley§7-§bPlugin§8] §cDisabling...");
@@ -80,11 +105,10 @@ public class Main extends JavaPlugin implements Listener {
 
     }
 
-    // Commands here
+    // TODO Add all the commands here
     private void registerCommands() {
-        /*
-          Commands needs to be put in here
-         */
+        // COMMANDS HERE
+
     }
 
     public static Main getInstance() {
@@ -92,14 +116,13 @@ public class Main extends JavaPlugin implements Listener {
     }
 
 
-    // Executer for events
+    // TODO Add all the events here
     public void registerEvents(){
-        //getServer().getPluginManager() get the name pm
+        // Gets the servers plugin manager and names it == pm
         PluginManager pm = getServer().getPluginManager();
         instance = this;
-        /*
-          Events needs to be put in here
-         */
+
+        // EVENTS HERE
 
     }
 }
