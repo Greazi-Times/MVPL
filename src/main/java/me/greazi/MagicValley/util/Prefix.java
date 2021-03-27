@@ -7,10 +7,10 @@ public class Prefix {
     }
 
     public static String Prefix() {
-        return Color.color(File.file.getMessageFile().getString("Prefix"));
+        return Color.color(String.valueOf(File.file.getMessageFile().getString("Prefixes.Prefix")) + " ");
     }
 
     public static String LockdownPrefix() {
-        return Color.color(File.file.getMessageFile().getString("LockdownPrefix"));
+        return Color.color(String.valueOf(File.file.getMessageFile().getString("Prefixes.Lockdown")) + "&c ");
     }
 }
