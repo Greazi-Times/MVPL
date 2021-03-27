@@ -1,9 +1,18 @@
-name: MavenBasePlugin
-version: 1.0-SNAPSHOT
+name: MagicValley2.0
+version: 1.0-SNAPSHOT.1
 description: This plugin is the core of MagicValley
 author: Greazi
 website: https://github.com/Greazi-Times
 
 depend: []
 softdepend: [Vault]
-main: me.greazi.MavenBasePlugin.Main
+main: me.greazi.MagicValley.Main
+commands:
+  lockdown:
+    description: Lockdown Command to enable and disable the lockdown
+
+permissions:
+  lockdown.use:
+    description: This permission is used to allow players to lockdown the server!
+  lockdown.bypass:
+    description: This permission is used to allow players to bypass server join while lockdown is active!
