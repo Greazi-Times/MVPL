@@ -12,7 +12,7 @@ import java.util.Objects;
 public class File {
 
     public static String getMessage(String msg) {
-        return Color.color(String.valueOf(Prefix.Prefix()) + file.getMessageFile().getString("Messages." + msg));
+        return Color.color(file.getMessageFile().getString("Messages." + msg));
     }
 
     public static String getMessageP(String msg, Player player) {
