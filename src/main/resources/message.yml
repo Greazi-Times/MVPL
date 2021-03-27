@@ -38,10 +38,10 @@
 #
 # !-------------------------------------------------------------------------------------------------!
 Prefixes:
-  # This is the main prefix of
-  Prefix: '&8[&aCore&8] &r'
-  CommandSpyPrefix: '&eCommand&6SPY&8>> &r'
-  Lockdown: '&6Lockdown &8>> &r'
+  # This is the main prefix of the plugin
+  Prefix: '&8[&aCore&8]'
+  # The prefix for the lockdown messages
+  Lockdown: '&6Lockdown &8>>'
 
 
 
@@ -60,11 +60,11 @@ Prefixes:
 #
 # !-------------------------------------------------------------------------------------------------!
 Messages:
-  # Lockdown is a feature that makes it possible to lock the server.
+  # This is the lockdown part here are all the messages of the feature
   Lockdown:
-    # The message that will be send to the user when the lockdown is enabled
+    # The message that will be send to the executor of the command when enabling the lockdown
     Enable: '&cLockdown &ahas been enabled'
-    # The message that will be send to the user
+    # The message that will be send to the executor of the command when disabling the lockdown
     Disable: '&cLockdown &4has been disabled'
 
   # No permission message this message will always be send if someone has no permission!
@@ -87,6 +87,35 @@ Messages:
 #
 # !-------------------------------------------------------------------------------------------------!
 Broadcast:
+  # This is the lockdown part here are all the broadcast of the feature
   Lockdown:
+    # The broadcast that will be send to players that the lockdown has been enabled
     Enable: '&cLockdown &ahas been enabled by &c%player%'
+    # The broadcast that will be send to players that the lockdown has been disabled
     Disable: '&cLockdown &4has been disabled by &c%player%'
+
+
+# !-------------------------------------------------------------------------------------------------!
+#   Kicks
+# !-------------------------------------------------------------------------------------------------!
+#
+#  The kicks section contains all the kicks of the plugin.
+#  All the messages can be changed keep in mind these require a reload.
+#
+#  Every command has there own section.
+#  Messages can **NOT** be empty this will brake the plugin.
+#
+#  Why can't messages be empty?
+#  Messages can **not** be empty this will cause the plugin to break
+#
+# !-------------------------------------------------------------------------------------------------!
+Kick:
+  # The kick message that will be send when there is a lockdown
+  Lockdown: |-
+    &cServer lockdown active
+
+    "&7Sorry for the trubble
+
+    &eReason &8» &7$reason
+    &7For more information go to:
+    &eMagicValley.nl or Discord.MagicValley.nl
