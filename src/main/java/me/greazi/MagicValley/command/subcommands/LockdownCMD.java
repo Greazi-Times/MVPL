@@ -1,5 +1,6 @@
 package me.greazi.MagicValley.command.subcommands;
 
+import me.greazi.MagicValley.Main;
 import me.greazi.MagicValley.util.Color;
 import me.greazi.MagicValley.util.File;
 import me.greazi.MagicValley.util.Prefix;
@@ -14,42 +15,57 @@ public class LockdownCMD implements CommandExecutor {
         CommandSender player = sender;
         if (cmd.getName().equals("lockdown"))
             if (!(sender instanceof Player)) {
-                sender.sendMessage(File.getMessage("Lockdown.Disable"));
+                sender.sendMessage(Prefix.LockdownPrefix() + File.getMessage("Lockdown.Disable"));
                 return true;
             }
             if (player.hasPermission("lockdown.use")) {
                 if (args.length == 0) {
-                    player.sendMessage(" Lockdown commands:");
-                    player.sendMessage("");
-                    player.sendMessage("* /lockdown enable <reason>");
-                    player.sendMessage("* /lockdown disable");
+                    player.sendMessage(Color.color("&8&m&l+---------------&8 [ &cUsage &8] &8&m&l---------------+&r"));
+                    player.sendMessage(Color.color("&c "));
+                    player.sendMessage(Color.color(" &6&l• &e/lockdown enable <reason> &8| &7Enable the lockdown"));
+                    player.sendMessage(Color.color(" &6&l• &e/lockdown disable &8| &7Disable the lockdown"));
+                    player.sendMessage(Color.color("&c "));
+                    player.sendMessage(Color.color("&8&m&l+-------------------------------------+&r"));
+                    player.sendMessage(Prefix.Prefix());
+                    player.sendMessage(Prefix.ConsolePrefix());
+                    player.sendMessage(Prefix.LockdownPrefix());
                 } else if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("enable")) {
                         player.sendMessage(Color.color("&cCorrect usage: /lockdown enable <reason>"));
-                    } else if (args[0].equalsIgnoreCase("disable")) {
-                        player.sendMessage(Prefix.LockdownPrefix() + File.getMessage("Lockdown.Disable").replace("%player%", player.getName());
-                        LockdownCMD.getInstance().getLockdown().setLockdown(false);
                     }
-                } else if (args.length >= 2 &&
-                        args[0].equalsIgnoreCase("enable")) {
-                    Bukkit.broadcastMessage(String.valueOf(Prefix.LockdownPrefix()) + Messages.LOCKDOWN_ENABLED.toString().replace("<player>", player.getName()));
-                    LockdownCMD.getInstance().getLockdown().setLockdown(true);
-                    StringBuilder message = new StringBuilder();
-                    for (int i = 1; i < args.length; i++)
-                        message.append(args[i]).append(" ");
-                    LockdownCMD.getInstance().getLockdown().setReason(message.toString());
-                    byte b;
-                    int j;
-                    Player[] arrayOfPlayer;
-                    for (j = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length, b = 0; b < j; ) {
-                        Player online = arrayOfPlayer[b];
-                        if (!online.hasPermission("lockdown.bypass"))
-                            online.kickPlayer(Messages.LOCKDOWN_KICK_MESSAGE.toString().replace("<reason>", message.toString().replace("&", ")));
-                                    b++;
+                    else if (args[0].equalsIgnoreCase("disable")) {
+                        player.sendMessage(String.valueOf(Prefix.LockdownPrefix()) + File.getMessage("Lockdown.Disable").replace("%player%", player.getName()));
+                        Main.getInstance().getLockdown().setLockdown(false);
+                    } else if (args[0].equalsIgnoreCase("help"))
+                    {
+                        player.sendMessage(Color.color("&8&m&l+------------&8 [ &cLockdown Help &8] &8&m&l------------+&r"));
+                        player.sendMessage(Color.color("&c "));
+                        player.sendMessage(Color.color(" &6&l• &e/lockdown enable <reason> &8| &7Enable the lockdown"));
+                        player.sendMessage(Color.color(" &6&l• &e/lockdown disable &8| &7Disable the lockdown"));
+                        player.sendMessage(Color.color("&c "));
+                        player.sendMessage(Color.color("&8&m&l+-------------------------------------+&r"));
+                    }
+                } else if (args[0].equalsIgnoreCase("enable")) {
+                    if (args.length >= 2) {
+                        Bukkit.broadcastMessage(String.valueOf(Prefix.LockdownPrefix()) + Color.color(File.file.getMessageFile().getString("Messages.Lockdown.Disable")).replace("<player>", player.getName()));
+                        Main.getInstance().getLockdown().setLockdown(true);
+                        StringBuilder message = new StringBuilder();
+                        for (int i = 1; i < args.length; i++)
+                            message.append(args[i]).append(" ");
+                        Main.getInstance().getLockdown().setReason(message.toString());
+                        byte b;
+                        int j;
+                        Player[] arrayOfPlayer;
+                        for (j = (arrayOfPlayer = Bukkit.getOnlinePlayers().toArray(new Player[0])).length, b = 0; b < j; ) {
+                            Player online = arrayOfPlayer[b];
+                            if (!online.hasPermission("lockdown.bypass"))
+                                online.kickPlayer(Color.color(File.file.getMessageFile().getString("Kick.Lockdown")).replace("%reason%", message));
+                            b++;
+                        }
                     }
                 }
             } else {
-                player.sendMessage(Messages.COMMAND_NO_PERMISSION.toString());
+                player.sendMessage(File.getMessage("NoPermission"));
             }
         return false;
     }
