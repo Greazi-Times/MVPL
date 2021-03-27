@@ -54,11 +54,11 @@ public class FileManagement {
             Bukkit.getConsoleSender().sendMessage(String.valueOf(Prefix.ConsolePrefix()) + Color.color("&econfig.yml created"));
         }
         this.config = (FileConfiguration)YamlConfiguration.loadConfiguration(this.cfile);
-        this.messagefile = new File(p.getDataFolder(), "lang.yml");
+        this.messagefile = new File(p.getDataFolder(), "message.yml");
         if (!this.messagefile.exists())
             try {
-                File en = new File(p.getDataFolder(), "/lang.yml");
-                InputStream E = getClass().getResourceAsStream("/lang.yml");
+                File en = new File(p.getDataFolder(), "/message.yml");
+                InputStream E = getClass().getResourceAsStream("/message.yml");
                 copyFile(E, en);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -105,7 +105,7 @@ public class FileManagement {
             this.message.save(this.messagefile);
         } catch (IOException e) {
             Bukkit.getServer().getLogger()
-                    .severe(ChatColor.RED + "Could not save lang.yml!");
+                    .severe(ChatColor.RED + "Could not save message.yml!");
         }
     }
 
