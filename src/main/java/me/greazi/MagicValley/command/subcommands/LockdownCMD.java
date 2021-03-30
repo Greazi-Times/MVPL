@@ -11,6 +11,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class LockdownCMD implements CommandExecutor {
+    Main plugin;
+    public LockdownCMD(Main plugin){
+        this.plugin = plugin;
+        plugin.getCommand("lockdown").setExecutor(this::onCommand);
+
+    }
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         CommandSender player = sender;
         if (cmd.getName().equals("lockdown"))
