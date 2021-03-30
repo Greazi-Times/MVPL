@@ -17,7 +17,7 @@ public class Main extends JavaPlugin implements Listener {
 
 
     private LockdownHandler serverlockdown = new LockdownHandler(this);
-
+    private String Prefix = "§8[§9MagicValley§7-§bPlugin§8] ";
 
     @Override
     public void onEnable() {
@@ -34,7 +34,7 @@ public class Main extends JavaPlugin implements Listener {
 
             // Sends starting message of the plugin
             System.out.println("§8 ");
-            System.out.println("§8[§9MagicValley§7-§bPlugin§8] §aStarting...");
+            System.out.println(Prefix + "§aStarting...");
 
             // Starts the file setup (Checks if the files exists. When they don't exists it will create the files.
             File.file.setup(this);
@@ -44,7 +44,6 @@ public class Main extends JavaPlugin implements Listener {
             // ------------------------------------------------------------------------------------------------------ //
 
             // Registers commands
-            registerCommands();
 
             // Registers all the events
             registerEvents();
@@ -56,23 +55,10 @@ public class Main extends JavaPlugin implements Listener {
             // ------------------------------------------------------------------------------------------------------ //
 
             // Sends figlit plugin name
-            System.out.println("§8 ");
-            System.out.println("§9   __  ___          _    _   __     ____        §7      §b   ___  __          _            ");
-            System.out.println("§9  /  |/  /__ ____ _(_)__| | / /__ _/ / /__ __ __§7  ____§b  / _ \\/ /_ _____ _(_)__        ");
-            System.out.println("§9 / /|_/ / _ `/ _ `/ / __/ |/ / _ `/ / / -_) // /§7 /___/§b / ___/ / // / _ `/ / _ \\       ");
-            System.out.println("§9/_/  /_/\\_,_/\\_, /_/\\__/|___/\\_,_/_/_/\\__/\\_, / §7      §b/_/  /_/\\_,_/\\_, /_/_//_/");
-            System.out.println("§9            /___/                        /___/  §7      §b            /___/                ");
-            System.out.println("§9Running Version§b: §a" + getDescription().getVersion());
-            System.out.println("§8 ");
-
-            // Safes the current time in milliseconds
-            long l2 = System.currentTimeMillis();
-
-            // Calculates the time it took to start the plugin
-            long l3 = l2 - l1;
+             Figlit();
 
             // Sends the final startup message that contains the time the startup started
-            System.out.println("§8[§9MagicValley§7-§bPlugin§8] §aStarted! §8took §c" + l3 + "ms§8");
+            System.out.println(Prefix +"§aStarted! §8took §c" + TimeLoad() + "ms§8");
             System.out.println("§8 ");
 
             // This will be triggered when the plugin failed to load
@@ -94,30 +80,22 @@ public class Main extends JavaPlugin implements Listener {
         }*/
     }
 
+    // Calculates the time for the startup
+    private static Long TimeLoad(){
+        long l1 = System.currentTimeMillis();
+        long l2 = System.currentTimeMillis();
+
+        return l2 - l1;
+    }
+
 
     @Override
     public void onDisable() {
         // Disable message when the plugin gets disabled
-        long l1 = System.currentTimeMillis();
-        System.out.println("§8[§9MagicValley§7-§bPlugin§8] §cDisabling...");
-        System.out.println("§8 ");
-        System.out.println("§9   __  ___          _    _   __     ____        §7      §b   ___  __          _    ");
-        System.out.println("§9  /  |/  /__ ____ _(_)__| | / /__ _/ / /__ __ __§7  ____§b  / _ \\/ /_ _____ _(_)__ ");
-        System.out.println("§9 / /|_/ / _ `/ _ `/ / __/ |/ / _ `/ / / -_) // /§7 /___/§b / ___/ / // / _ `/ / _ \\");
-        System.out.println("§9/_/  /_/\\_,_/\\_, /_/\\__/|___/\\_,_/_/_/\\__/\\_, / §7      §b/_/  /_/\\_,_/\\_, /_/_//_/");
-        System.out.println("§9                                                      §8          §b              /____/          ");
-        System.out.println("§9Running Version §a" + getDescription().getVersion());
-        System.out.println("§8 ");
-        long l2 = System.currentTimeMillis();
-        long l3 = l2 - l1;
-        System.out.println("§8[§9MagicValley§7-§bPlugin§8] §cDisabled! §8took §c" + l3 + "ms§8");
+        System.out.println(Prefix +"§cDisabling...");
+        Figlit();
+        System.out.println(Prefix +"§cDisabled! §8took §c" + TimeLoad() + "ms§8");
 
-    }
-
-    // TODO Add all the commands here
-    public void registerCommands() {
-        // COMMANDS HERE
-        getCommand("lockdown").setExecutor((CommandExecutor) new LockdownCMD());
     }
 
     // TODO Add all the events here
@@ -133,6 +111,13 @@ public class Main extends JavaPlugin implements Listener {
 
     public LockdownHandler getLockdown() {
         return this.serverlockdown;
+    }
+    private static String  Figlit(){
+        return  "§9   __  ___          _    _   __     ____        §7      §b   ___  __          _    \n" +
+                "§9  /  |/  /__ ____ _(_)__| | / /__ _/ / /__ __ __§7  ____§b  / _ \\/ /_ _____ _(_)__ \n" +
+                "§9 / /|_/ / _ `/ _ `/ / __/ |/ / _ `/ / / -_) // /§7 /___/§b / ___/ / // / _ `/ / _ \\\n" +
+                "§9/_/  /_/\\_,_/\\_, /_/\\__/|___/\\_,_/_/_/\\__/\\_, / §7      §b/_/  /_/\\_,_/\\_, /_/_//_/\n" +
+                "§9            /___/                        /___/  §7      §b            /___/        ";
     }
 
     public static Main getInstance() {
