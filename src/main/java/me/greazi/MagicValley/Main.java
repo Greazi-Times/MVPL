@@ -1,11 +1,8 @@
 package me.greazi.MagicValley;
 
-import me.greazi.MagicValley.command.subcommands.LockdownCMD;
 import me.greazi.MagicValley.util.File;
 import me.greazi.MagicValley.util.LockdownHandler;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,7 +14,6 @@ public class Main extends JavaPlugin implements Listener {
 
 
     private LockdownHandler serverlockdown = new LockdownHandler(this);
-    private String Prefix = "§8[§9MagicValley§7-§bPlugin§8] ";
 
     @Override
     public void onEnable() {
@@ -55,7 +51,7 @@ public class Main extends JavaPlugin implements Listener {
             // ------------------------------------------------------------------------------------------------------ //
 
             // Sends figlit plugin name
-             Figlit();
+             StartupFiglit();
 
             // Sends the final startup message that contains the time the startup started
             System.out.println(Prefix +"§aStarted! §8took §c" + TimeLoad() + "ms§8");
@@ -93,7 +89,7 @@ public class Main extends JavaPlugin implements Listener {
     public void onDisable() {
         // Disable message when the plugin gets disabled
         System.out.println(Prefix +"§cDisabling...");
-        Figlit();
+        StartupFiglit();
         System.out.println(Prefix +"§cDisabled! §8took §c" + TimeLoad() + "ms§8");
 
     }
@@ -112,7 +108,10 @@ public class Main extends JavaPlugin implements Listener {
     public LockdownHandler getLockdown() {
         return this.serverlockdown;
     }
-    private static String  Figlit(){
+
+    private static final String Prefix = "§8[§9MagicValley§7-§bPlugin§8] ";
+
+    private static String  StartupFiglit(){
         return  "§9   __  ___          _    _   __     ____        §7      §b   ___  __          _    \n" +
                 "§9  /  |/  /__ ____ _(_)__| | / /__ _/ / /__ __ __§7  ____§b  / _ \\/ /_ _____ _(_)__ \n" +
                 "§9 / /|_/ / _ `/ _ `/ / __/ |/ / _ `/ / / -_) // /§7 /___/§b / ___/ / // / _ `/ / _ \\\n" +
