@@ -1,10 +1,12 @@
 me\greazi\MagicValley\util\LockdownHandler$1.class
 me\greazi\MagicValley\util\LockdownHandler.class
 me\greazi\MagicValley\Main.class
+me\greazi\MagicValley\messages\help\main.class
 me\greazi\MagicValley\modules\FileManagement.class
 me\greazi\MagicValley\util\Color.class
-me\greazi\MagicValley\util\Prefix.class
+me\greazi\MagicValley\messages\help\Lockdown.class
 me\greazi\MagicValley\util\File.class
 me\greazi\MagicValley\util\Handler.class
 me\greazi\MagicValley\command\subcommands\LockdownCMD.class
 me\greazi\MagicValley\command\MainCommand.class
+me\greazi\MagicValley\messages\Prefix.class
