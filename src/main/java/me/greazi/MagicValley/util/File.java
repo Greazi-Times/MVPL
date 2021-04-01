@@ -1,5 +1,6 @@
 package me.greazi.MagicValley.util;
 
+import me.greazi.MagicValley.messages.Prefix;
 import me.greazi.MagicValley.modules.FileManagement;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -29,7 +30,7 @@ public class File {
     }
 
     public static String msg(String item) {
-        return Color.color(String.valueOf(Prefix.Prefix()) + item);
+        return Color.color(String.valueOf(Prefix.ConsolePrefix()) + item);
     }
 
     public static Boolean isPluginLoaded(String name) {
