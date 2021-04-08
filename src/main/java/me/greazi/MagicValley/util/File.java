@@ -1,6 +1,6 @@
 package me.greazi.MagicValley.util;
 
-import me.greazi.MagicValley.messages.Prefix;
+import me.greazi.MagicValley.util.messages.Prefix;
 import me.greazi.MagicValley.modules.FileManagement;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

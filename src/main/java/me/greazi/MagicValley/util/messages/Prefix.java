@@ -1,4 +1,4 @@
-package me.greazi.MagicValley.messages;
+package me.greazi.MagicValley.util.messages;
 
 import me.greazi.MagicValley.util.Color;
 import me.greazi.MagicValley.util.File;

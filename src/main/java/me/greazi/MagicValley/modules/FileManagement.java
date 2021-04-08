@@ -1,6 +1,6 @@
 package me.greazi.MagicValley.modules;
 
-import me.greazi.MagicValley.messages.Prefix;
+import me.greazi.MagicValley.util.messages.Prefix;
 import me.greazi.MagicValley.util.Color;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

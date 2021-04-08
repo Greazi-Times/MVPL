@@ -1,4 +1,4 @@
-package me.greazi.MagicValley.messages.help;
+package me.greazi.MagicValley.util.messages.help;
 
 public class Lockdown {
 
