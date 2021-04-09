@@ -17,7 +17,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-       // try {
+        try {
             // Now needs to be done via this ugly way as the original way did lead to a loading error.
             instance = this;
 
@@ -58,7 +58,7 @@ public class Main extends JavaPlugin implements Listener {
             System.out.println("§8 ");
 
             // This will be triggered when the plugin failed to load
-        /*} catch (final Exception e) {
+        } catch (final Exception e) {
         // ------------------------------------------------------------------------------------------------------ //
         //                                              Failed loading                                            //
         // ------------------------------------------------------------------------------------------------------ //
@@ -73,7 +73,7 @@ public class Main extends JavaPlugin implements Listener {
             System.out.println("§8 ");
             System.out.println("§8[§9MagicValley§7-§bPlugin§8] §cDisabled!");
             System.out.println("§8 ");
-        }*/
+        }
     }
 
     // Calculates the time for the startup
