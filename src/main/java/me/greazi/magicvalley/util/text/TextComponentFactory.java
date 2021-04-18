@@ -64,8 +64,6 @@ public class TextComponentFactory {
           emptySpace,
           getWebLinkTextComponent(MVplWebLinks.WIKI),
           emptySpace,
-          getWebLinkTextComponent(MVplWebLinks.SPIGOT),
-          emptySpace,
           getWebLinkTextComponent(MVplWebLinks.HELP_TRANSLATE),
           suffix
         ), MessageType.SYSTEM);
