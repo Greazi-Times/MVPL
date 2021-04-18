@@ -1,18 +1,54 @@
-name: MagicValley2.0
-version: 1.0-SNAPSHOT
-description: This plugin is the core of MagicValley
-author: Greazi
-website: https://github.com/Greazi-Times
+name: MVpl
+version: 1.1.148
+description: >
+  The goal of this plugin is to take MagicValley to the next level. There this plugin
+  is far from done and there will be updated every time there is a stable build
 
-depend: []
-softdepend: [Vault]
-main: me.greazi.MagicValley.Main
+author: Greazi
+website: https://www.magicvalley.nl/plugin
+main: me.greazi.magicvalley.MVpl
+
 commands:
-  lockdown:
-    description: Lockdown Command to enable and disable the lockdown
+  ### Main command ###
+  mvpl:
+    description: Shows a brief mod description
+    permission: mvpl.commands.mvpl
+
+  ### Reload local ###
+  mvplreloadlocale:
+    aliases: [mvreloadlocale]
+    description: Reloads locale
+    permission: mvpl.commands.reloadlocale
+
+  ### Test command ###
+  mvtest:
+    description: The test command to test new commands
+    permission: mvpl.commands.test
 
 permissions:
-  lockdown.use:
-    description: This permission is used to allow players to lockdown the server!
-  lockdown.bypass:
-    description: This permission is used to allow players to bypass server join while lockdown is active!
+  ### All permissions
+  mvpl.*:
+    default: false
+    description: Gives all the permissions of mvpl
+    children:
+      mvpl.default: true
+      mvpl.op: true
+
+  ### Op ###
+  mvpl.op:
+    default: op
+    description: The permssion for all the oped players
+    children:
+      mvpl.commands.reloadlocale: true
+      mvpl.commands.test: true
+
+  ### Commands ###
+  mvpl.commands.mvpl:
+    default: false
+    description: The permission to use the test command
+  mvpl.commands.reloadlocale:
+    default: false
+    description: The command to reload the language file
+  mvpl.commands.test:
+    default: false
+    description: To use the test command that contains a possible new command
