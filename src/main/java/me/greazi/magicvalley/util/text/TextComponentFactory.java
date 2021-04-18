@@ -109,11 +109,6 @@ public class TextComponentFactory {
                 TextUtils.addChildWebComponent(webTextComponent, "Web");
                 webTextComponent.clickEvent(getUrlClickEvent(MVplUrl.urlWebsite));
                 break;
-            case SPIGOT:
-                webTextComponent = Component.text().content(LocaleLoader.getString("JSON.Hover.AtSymbolURL"));
-                TextUtils.addChildWebComponent(webTextComponent, "Spigot");
-                webTextComponent.clickEvent(getUrlClickEvent(MVplUrl.urlSpigot));
-                break;
             case DISCORD:
                 webTextComponent = Component.text().content(LocaleLoader.getString("JSON.Hover.AtSymbolURL"));
                 TextUtils.addChildWebComponent(webTextComponent, "Discord");
@@ -155,12 +150,6 @@ public class TextComponentFactory {
                 componentBuilder.append(Component.newline()).append(Component.newline());
                 componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
                 componentBuilder.append(Component.text("\nDev Blogs, and information related to mcMMO can be found here", NamedTextColor.GRAY));
-                break;
-            case SPIGOT:
-                addUrlHeaderHover(webLinks, componentBuilder);
-                componentBuilder.append(Component.newline()).append(Component.newline());
-                componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
-                componentBuilder.append(Component.text("\nI post regularly in the discussion thread here!", NamedTextColor.GRAY));
                 break;
             case PATREON:
                 addUrlHeaderHover(webLinks, componentBuilder);
