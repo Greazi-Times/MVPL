@@ -1,0 +1,6 @@
+Version 1.1.148
+    New base system that will make this plugin run smoother and more efficient
+
+    NOTE:
+    This version is not 100% tested there is a possibility that there are bugs or part that are not functioning for 100%
+    If you encounter any of these problem report these issues on the github page.
