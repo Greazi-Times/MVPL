@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MagicValley2.0.iml" filepath="$PROJECT_DIR$/.idea/MagicValley2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mcMMO.iml" filepath="$PROJECT_DIR$/mcMMO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvpl.iml" filepath="$PROJECT_DIR$/mvpl.iml" />
     </modules>
   </component>
 </project>
