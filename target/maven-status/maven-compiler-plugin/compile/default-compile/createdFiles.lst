@@ -5,6 +5,7 @@ me\greazi\magicvalley\commands\admin\MVplReloadLocaleCommand.class
 me\greazi\magicvalley\json\CustomBaseComponent.class
 me\greazi\magicvalley\util\text\TextComponentFactory.class
 me\greazi\magicvalley\util\Motd.class
+me\greazi\magicvalley\util\text\ColorUtil.class
 me\greazi\magicvalley\commands\test\MVTest.class
 me\greazi\magicvalley\MVpl.class
 me\greazi\magicvalley\commands\MVplCommand.class
