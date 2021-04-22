@@ -1,8 +1,8 @@
 package me.greazi.magicvalley.commands;
 
+import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.config.Config;
 import me.greazi.magicvalley.locale.LocaleLoader;
-import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.util.Permissions;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -23,11 +23,14 @@ public class MVplCommand implements CommandExecutor {
                 String description = LocaleLoader.getString("mvpl.Description");
                 String[] mcSplit = description.split(",");
                 sender.sendMessage(mcSplit);
-                sender.sendMessage(LocaleLoader.getString("mvpl.Description.Dev"));
+                String devDescription = LocaleLoader.getString("mvpl.Description.Dev");
+                String[] mcSplit2 = devDescription.split(",");
+                sender.sendMessage(mcSplit2);
 
                 if (Config.getInstance().getDonateMessageEnabled()) {
-                    sender.sendMessage(LocaleLoader.getString("MOTD.Donate"));
-                    sender.sendMessage(ChatColor.GOLD + " - " + ChatColor.GREEN + "greazi@gmail.com" + ChatColor.GOLD + " Paypal");
+                    String donate = LocaleLoader.getString("MOTD.Donate");
+                    String[] mcSplit3 = donate.split(",");
+                    sender.sendMessage(mcSplit3);
                 }
 
                 if (Permissions.showversion(sender)) {
