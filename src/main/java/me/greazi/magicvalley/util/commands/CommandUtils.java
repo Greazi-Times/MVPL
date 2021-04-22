@@ -1,9 +1,9 @@
 package me.greazi.magicvalley.util.commands;
 
+import com.google.common.collect.ImmutableList;
+import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.config.Config;
 import me.greazi.magicvalley.locale.LocaleLoader;
-import me.greazi.magicvalley.MVpl;
-import com.google.common.collect.ImmutableList;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -96,7 +96,7 @@ public final class CommandUtils {
             String playerName = offlinePlayer.getName();
             
             if (playerName == null) { //Do null checking here to detect corrupted data before sending it throuogh .equals
-            	System.err.println("[McMMO] Player data file with UIID " + offlinePlayer.getUniqueId() + " is missing a player name. This may be a legacy file from before bukkit.lastKnownName. This should be okay to ignore.");
+            	System.err.println("[MVpl] Player data file with UIID " + offlinePlayer.getUniqueId() + " is missing a player name. This may be a legacy file from before bukkit.lastKnownName. This should be okay to ignore.");
             	continue; //Don't let an error here interrupt the loop
             }
 
