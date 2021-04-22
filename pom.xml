@@ -1,15 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>me.greazi.magicvalley.mcMMO</groupId>
     <artifactId>mvpl</artifactId>
     <version>1.1.148</version>
     <name>MVpl</name>
+
     <url>https://github.com/Greazi-Times/MagicValley2.0</url>
+
     <issueManagement>
         <url>https://github.com/Greazi-Times/MagicValley2.0/issues</url>
         <system>GitHub</system>
     </issueManagement>
+
     <packaging>jar</packaging>
+
     <distributionManagement>
         <repository>
             <id>neetgames</id>
@@ -20,6 +27,7 @@
             <url>https://nexus.neetgames.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
@@ -179,6 +187,7 @@
             </extension>
         </extensions>
     </build>
+
     <repositories>
         <repository>
             <id>spigot-repo</id>
@@ -203,6 +212,7 @@
         </repository>
         <!-- ... -->
     </repositories>
+
     <dependencies>
         <dependency>
             <groupId>co.aikar</groupId>
@@ -327,7 +337,9 @@
             <version>19.0.0</version>
         </dependency>
     </dependencies>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
 </project>
