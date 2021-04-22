@@ -46,7 +46,7 @@ public abstract class ConfigLoader {
 
     protected void loadFile() {
         if (!configFile.exists()) {
-            MVpl.p.debug("Creating mcMMO " + fileName + " File...");
+            MVpl.p.debug("Creating MVpl " + fileName + " File...");
 
             try {
                 MVpl.p.saveResource(fileName, false); // Normal files
@@ -56,7 +56,7 @@ public abstract class ConfigLoader {
             }
         }
         else {
-            MVpl.p.debug("Loading mcMMO " + fileName + " File...");
+            MVpl.p.debug("Loading MVpl " + fileName + " File...");
         }
 
         config = YamlConfiguration.loadConfiguration(configFile);
@@ -81,7 +81,7 @@ public abstract class ConfigLoader {
             MVpl.p.debug("No errors found in " + fileName + "!");
         }
         else {
-            MVpl.p.getLogger().warning("Errors were found in " + fileName + "! mcMMO was disabled!");
+            MVpl.p.getLogger().warning("Errors were found in " + fileName + "! MVpl was disabled!");
             MVpl.p.getServer().getPluginManager().disablePlugin(MVpl.p);
             MVpl.p.noErrorsInConfigFiles = false;
         }
