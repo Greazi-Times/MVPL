@@ -1,8 +1,11 @@
 name: MVpl
 version: 1.1.148
+build: 38
 description: >
-  The goal of this plugin is to take MagicValley to the next level. There this plugin
-  is far from done and there will be updated every time there is a stable build
+  MagicValleyPlugin (For short MVPL), is a custom made plugin for MagicValley.
+  The goal of this plugin is to take MagicValley to the next level.
+  Notice:
+  There will be updates everytime we have a positive commit, these commits will be tested and imported into the plugin if these are stable.
 
 author: Greazi
 website: https://www.magicvalley.nl/plugin
@@ -26,21 +29,44 @@ commands:
     permission: mvpl.commands.test
 
 permissions:
-  ### All permissions
-  mvpl.*:
+  ##################################
+  #            Clusters            #
+  ##################################
+
+  ### Default ###
+  mvpl.default:
+    default: true
+    description: The permission cluster for the default players
+    children:
+      mvpl.commands.mvpl: true
+
+  ### Magician ###
+  mvpl.magician:
     default: false
-    description: Gives all the permissions of mvpl
+    description: The permission cluster for the rank Magician
     children:
       mvpl.default: true
-      mvpl.op: true
 
   ### Op ###
   mvpl.op:
     default: op
-    description: The permssion for all the oped players
+    description: The permission cluster for oped players
     children:
       mvpl.commands.reloadlocale: true
       mvpl.commands.test: true
+
+
+  ### All permissions ###
+  mvpl.*:
+    default: false
+    description: The permission cluster to give all the permissions
+    children:
+      mvpl.default: true
+      mvpl.op: true
+
+  ##################################
+  #            Commands            #
+  ##################################
 
   ### Commands ###
   mvpl.commands.mvpl:

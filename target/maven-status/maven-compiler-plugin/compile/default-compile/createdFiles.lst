@@ -24,4 +24,5 @@ me\greazi\magicvalley\config\AutoUpdateConfigLoader.class
 net\shatteredlands\shatt\backup\ZipLibrary.class
 me\greazi\magicvalley\util\commands\CommandRegistrationManager.class
 me\greazi\magicvalley\util\text\TextComponentFactory$1.class
+me\greazi\magicvalley\commands\admin\MVplReloadLocaleCommand$1.class
 me\greazi\magicvalley\config\ConfigLoader.class
