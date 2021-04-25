@@ -5,7 +5,7 @@
 
     <groupId>me.greazi.magicvalley.mcMMO</groupId>
     <artifactId>mvpl</artifactId>
-    <version>1.1.148</version>
+    <version>1.1.149-Snapshot</version>
     <name>MVpl</name>
 
     <url>https://github.com/Greazi-Times/MagicValley2.0</url>
@@ -27,6 +27,13 @@
             <url>https://nexus.neetgames.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:svn:https://github.com/Greazi-Times</connection>
+        <developerConnection>scm:svn:https://github.com/Greazi-Times/</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/Greazi-Times/</url>
+    </scm>
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -84,6 +91,29 @@
                     <target>1.8</target>
                     <excludes>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>buildnumber</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>{0,number}</format>
+                    <items>
+                        <item>buildNumber</item>
+                    </items>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                    <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>
                 </configuration>
             </plugin>
             <plugin>

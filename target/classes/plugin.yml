@@ -1,6 +1,6 @@
 name: MVpl
-version: 1.1.148
-build: 38
+version: 1.1.149-Snapshot
+build: 44
 description: >
   MagicValleyPlugin (For short MVPL), is a custom made plugin for MagicValley.
   The goal of this plugin is to take MagicValley to the next level.
@@ -32,7 +32,6 @@ permissions:
   ##################################
   #            Clusters            #
   ##################################
-
   ### Default ###
   mvpl.default:
     default: true
@@ -54,8 +53,7 @@ permissions:
     children:
       mvpl.commands.reloadlocale: true
       mvpl.commands.test: true
-
-
+      
   ### All permissions ###
   mvpl.*:
     default: false
@@ -78,3 +76,7 @@ permissions:
   mvpl.commands.test:
     default: false
     description: To use the test command that contains a possible new command
+
+  ##################################
+  #             Bypass             #
+  ##################################
