@@ -9,6 +9,15 @@ import org.jetbrains.annotations.NotNull;
 import java.text.DecimalFormat;
 import java.util.Locale;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public class StringUtils {
 
     protected static DecimalFormat percent = new DecimalFormat("##0.00%");

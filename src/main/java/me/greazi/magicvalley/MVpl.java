@@ -1,7 +1,6 @@
 package me.greazi.magicvalley;
 
 import me.greazi.magicvalley.commands.CommandManager;
-import me.greazi.magicvalley.config.Config;
 import me.greazi.magicvalley.config.GeneralConfig;
 import me.greazi.magicvalley.locale.LocaleLoader;
 import me.greazi.magicvalley.util.commands.CommandRegistrationManager;
@@ -19,6 +18,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
 
 public class MVpl extends JavaPlugin {
     /* Managers */

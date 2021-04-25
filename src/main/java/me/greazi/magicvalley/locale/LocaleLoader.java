@@ -1,11 +1,9 @@
 package me.greazi.magicvalley.locale;
 
-import me.greazi.magicvalley.config.Config;
 import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.util.text.ColorUtil;
 import me.greazi.magicvalley.util.text.TextUtils;
 import net.kyori.adventure.text.TextComponent;
-import org.bukkit.ChatColor;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -15,6 +13,15 @@ import java.nio.file.Paths;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.logging.Level;
+
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
 
 public final class LocaleLoader {
     private static final String BUNDLE_ROOT = "me.greazi.magicvalley.locale.locale";

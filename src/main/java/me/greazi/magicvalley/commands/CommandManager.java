@@ -3,12 +3,19 @@ package me.greazi.magicvalley.commands;
 import co.aikar.commands.BukkitCommandIssuer;
 import co.aikar.commands.BukkitCommandManager;
 import co.aikar.commands.ConditionFailedException;
-import me.greazi.magicvalley.locale.LocaleLoader;
 import me.greazi.magicvalley.MVpl;
-import me.greazi.magicvalley.util.Permissions;
-import org.bukkit.entity.Player;
+import me.greazi.magicvalley.locale.LocaleLoader;
 import org.bukkit.permissions.Permissible;
 import org.jetbrains.annotations.NotNull;
+
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
 
 /*
  * For now this class will only handle ACF converted commands, all other commands will be handled elsewhere

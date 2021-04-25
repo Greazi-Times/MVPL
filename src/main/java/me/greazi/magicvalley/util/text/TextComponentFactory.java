@@ -1,9 +1,9 @@
 package me.greazi.magicvalley.util.text;
 
+import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.json.MVplUrl;
 import me.greazi.magicvalley.json.MVplWebLinks;
 import me.greazi.magicvalley.locale.LocaleLoader;
-import me.greazi.magicvalley.MVpl;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.audience.MessageType;
 import net.kyori.adventure.identity.Identity;
@@ -17,6 +17,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
 
 /**
  * This class handles many of the JSON components that mcMMO makes and uses

@@ -8,6 +8,15 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.util.List;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public abstract class ConfigLoader {
     protected String fileName;
     protected final File configFile;

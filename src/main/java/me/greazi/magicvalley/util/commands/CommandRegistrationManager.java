@@ -1,12 +1,20 @@
 package me.greazi.magicvalley.util.commands;
 
-import me.greazi.magicvalley.commands.*;
+import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.commands.MVplCommand;
 import me.greazi.magicvalley.commands.admin.MVplReloadLocaleCommand;
 import me.greazi.magicvalley.commands.test.MVTest;
 import me.greazi.magicvalley.locale.LocaleLoader;
-import me.greazi.magicvalley.MVpl;
 import org.bukkit.command.PluginCommand;
+
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
 
 public final class CommandRegistrationManager {
     private CommandRegistrationManager() {}

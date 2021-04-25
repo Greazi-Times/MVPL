@@ -3,6 +3,15 @@ package me.greazi.magicvalley.config;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public class Config extends AutoUpdateConfigLoader {
     private static Config instance;
 

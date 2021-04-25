@@ -7,6 +7,15 @@ import net.kyori.adventure.text.Component;
 
 import java.util.function.BiConsumer;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public enum MVplMessageType {
     ACTION_BAR(Audience::sendActionBar),
     SYSTEM((audience, message) -> audience.sendMessage(Identity.nil(), message, MessageType.SYSTEM));

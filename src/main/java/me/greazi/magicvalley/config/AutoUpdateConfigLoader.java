@@ -3,13 +3,21 @@ package me.greazi.magicvalley.config;
 import me.greazi.magicvalley.MVpl;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
+
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
 
 public abstract class AutoUpdateConfigLoader extends ConfigLoader {
     public AutoUpdateConfigLoader(String relativePath, String fileName, File dataFolder) {

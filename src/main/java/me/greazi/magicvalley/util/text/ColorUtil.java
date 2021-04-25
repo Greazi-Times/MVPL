@@ -2,6 +2,15 @@ package me.greazi.magicvalley.util.text;
 
 import org.bukkit.ChatColor;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public class ColorUtil {
     public static String addColors(String input) {
         input = input.replaceAll("\\Q[[BLACK]]\\E", ChatColor.BLACK.toString());

@@ -3,6 +3,15 @@ package me.greazi.magicvalley.json;
 import me.greazi.magicvalley.locale.LocaleLoader;
 import me.greazi.magicvalley.util.text.StringUtils;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public enum MVplWebLinks {
     WEBSITE,
     DISCORD,

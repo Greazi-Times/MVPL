@@ -10,6 +10,15 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public class MVplCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
@@ -37,7 +46,7 @@ public class MVplCommand implements CommandExecutor {
                     sender.sendMessage(LocaleLoader.getString("MOTD.Version", MVpl.p.getDescription().getVersion()));
                 }
 
-//                mcMMO.getHolidayManager().anniversaryCheck(sender);
+//                MVpl.getHolidayManager().anniversaryCheck(sender);
                 return true;
 
             case 1:
