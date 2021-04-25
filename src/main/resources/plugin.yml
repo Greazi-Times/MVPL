@@ -1,6 +1,14 @@
+#
+#
+#  Copyright © Greazi 2020 | All Rights Reserved.
+#  Unauthorized copying of this file, via any medium is strictly prohibited.
+#  Proprietary and confidential.
+#  Written by Greazi
+#
+#  
 name: MVpl
 version: ${project.version}
-build: 38
+build: ${buildNumber}
 description: >
   MagicValleyPlugin (For short MVPL), is a custom made plugin for MagicValley.
   The goal of this plugin is to take MagicValley to the next level.

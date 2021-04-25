@@ -1,6 +1,17 @@
 #
+#
+#  Copyright © Greazi 2020 | All Rights Reserved.
+#  Unauthorized copying of this file, via any medium is strictly prohibited.
+#  Proprietary and confidential.
+#  Written by Greazi
+#
+#
+
+
+
+#
 #  MagicValley-Plugin configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+#  Last updated on ${project.version}-b${buildNumber}
 #
 #####
 
