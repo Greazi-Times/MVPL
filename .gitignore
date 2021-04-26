@@ -15,8 +15,8 @@
 
 # gradle
 /.gradle
-/mcMMO-core/.gradle
-/mcMMO-core/gradle
+/MVpl-core/.gradle
+/MVpl-core/gradle
 
 # netbeans
 /nbproject
@@ -48,10 +48,12 @@
 .idea/
 
 # Project Stuff
-/src/main/resources/mcMMO
+/src/main/resources/MVpl
 
 # Other Libraries
 *.jar
 
 # Atlassian Stuff
 /atlassian-ide-plugin.xml
+
+/target/
