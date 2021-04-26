@@ -58,10 +58,10 @@ public abstract class ConfigLoader {
             MVpl.p.debug("Creating MVpl " + fileName + " File...");
 
             try {
-                MVpl.p.saveResource(fileName, false); // Normal files
+                MVpl.p.saveResource(fileName, false);
             }
             catch (IllegalArgumentException ex) {
-                MVpl.p.saveResource(configFile.getParentFile().getName() + File.separator + fileName, false); // Mod files
+                MVpl.p.saveResource(configFile.getParentFile().getName() + File.separator + fileName, false);
             }
         }
         else {

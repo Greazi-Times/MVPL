@@ -23,13 +23,6 @@ public class StringUtils {
     protected static DecimalFormat percent = new DecimalFormat("##0.00%");
     protected static DecimalFormat shortDecimal = new DecimalFormat("##0.0");
 
-    /**
-     * Gets a capitalized version of the target string.
-     *
-     * @param target
-     *            String to capitalize
-     * @return the capitalized string
-     */
     public static String getCapitalized(String target) {
         return target.substring(0, 1).toUpperCase() + target.substring(1).toLowerCase(Locale.ENGLISH);
     }
@@ -38,13 +31,6 @@ public class StringUtils {
         return shortDecimal.format(ticks / 20);
     }
 
-
-    /**
-     * Creates a string from an array skipping the first n elements
-     * @param args the array to iterate over when forming the string
-     * @param index the amount of elements to skip over
-     * @return the "trimmed" string
-     */
     public static String buildStringAfterNthElement(@NotNull String @NotNull []args, int index) {
         StringBuilder trimMessage = new StringBuilder();
 
@@ -126,13 +112,6 @@ public class StringUtils {
         return prettyString;
     }
 
-    /**
-     * Determine if a string represents an Integer
-     *
-     * @param string
-     *            String to check
-     * @return true if the string is an Integer, false otherwise
-     */
     public static boolean isInt(String string) {
         try {
             Integer.parseInt(string);
@@ -142,13 +121,6 @@ public class StringUtils {
         }
     }
 
-    /**
-     * Determine if a string represents a Double
-     *
-     * @param string
-     *            String to check
-     * @return true if the string is a Double, false otherwise
-     */
     public static boolean isDouble(String string) {
         try {
             Double.parseDouble(string);

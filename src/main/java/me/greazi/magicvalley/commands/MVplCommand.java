@@ -4,10 +4,12 @@ import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.config.Config;
 import me.greazi.magicvalley.locale.LocaleLoader;
 import me.greazi.magicvalley.util.Permissions;
+import me.greazi.magicvalley.util.text.TextComponentFactory;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 /*
@@ -29,12 +31,16 @@ public class MVplCommand implements CommandExecutor {
                     return true;
                 }
 
+                Player player = (Player) sender;
+
                 String description = LocaleLoader.getString("mvpl.Description");
                 String[] mcSplit = description.split(",");
                 sender.sendMessage(mcSplit);
                 String devDescription = LocaleLoader.getString("mvpl.Description.Dev");
                 String[] mcSplit2 = devDescription.split(",");
                 sender.sendMessage(mcSplit2);
+                // TODO This sends a null messsage caused by TextComponentFactory line 66
+                TextComponentFactory.sendPlayerUrlHeader(player);
 
                 if (Config.getInstance().getDonateMessageEnabled()) {
                     String donate = LocaleLoader.getString("MOTD.Donate");
@@ -46,7 +52,6 @@ public class MVplCommand implements CommandExecutor {
                     sender.sendMessage(LocaleLoader.getString("MOTD.Version", MVpl.p.getDescription().getVersion()));
                 }
 
-//                MVpl.getHolidayManager().anniversaryCheck(sender);
                 return true;
 
             case 1:

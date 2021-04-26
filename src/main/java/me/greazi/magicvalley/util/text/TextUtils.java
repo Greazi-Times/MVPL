@@ -26,19 +26,14 @@ public class TextUtils {
     private static @Nullable LegacyComponentSerializer customLegacySerializer;
 
     private TextUtils() {
-        // We don't want any instances of this class.
+
     }
 
-    /**
-     * Makes a single component from an array of components, can optionally add prefixes and suffixes to come before and after each component
-     * @param componentsArray target array
-     * @return a component with optional styling built from an array
-     */
     static @NotNull Component fromArray(@NotNull Component[] componentsArray, @Nullable Component prefixComponent, @Nullable Component suffixComponent) {
         TextComponent.Builder componentBuilder = Component.text();
 
         for(Component component : componentsArray) {
-            if(component == null) //Individual elements can be null
+            if(component == null)
                 continue;
 
             if(prefixComponent != null)
@@ -54,14 +49,6 @@ public class TextUtils {
         return componentBuilder.build();
     }
 
-    /**
-     * Takes a list of components and splits them into arrays each with a maximum element limit
-     * Individual elements in [][X] may be null
-     *
-     * @param components target component list
-     * @param groupsSize maximum size per array
-     * @return a 2D array with components split into groups
-     */
     static @NotNull Component[][] splitComponentsIntoGroups(@NotNull List<Component> components, int groupsSize) {
         int groupCount = (int) Math.ceil((double) components.size() / (double) groupsSize);
 
@@ -70,24 +57,20 @@ public class TextUtils {
         int groupsFinished = 0;
 
         while (groupsFinished < groupCount) {
-            //Fill group with members
             for(int i = 0; i < groupsSize; i++) {
-                int indexOfPotentialMember = i + (groupsFinished * 3); //Groups don't always fill all members neatly
+                int indexOfPotentialMember = i + (groupsFinished * 3);
 
-                //Some groups won't have entirely non-null elements
                 if(indexOfPotentialMember > components.size()-1) {
                     break;
                 }
 
                 Component potentialMember = components.get(indexOfPotentialMember);
 
-                //Make sure the potential member exists because of rounding
                 if(potentialMember != null) {
                     splitGroups[groupsFinished][i] = potentialMember;
                 }
             }
 
-            //Another group is finished
             groupsFinished++;
         }
 

@@ -36,13 +36,6 @@ public final class LocaleLoader {
         return getString(key, (Object[]) null);
     }
 
-    /**
-     * Gets the appropriate string from the Locale files.
-     *
-     * @param key The key to look up the string with
-     * @param messageArguments Any arguments to be added to the string
-     * @return The properly formatted locale string
-     */
     public static String getString(String key, Object... messageArguments) {
         if (bundle == null) {
             initialize();
@@ -52,14 +45,6 @@ public final class LocaleLoader {
         return formatString(rawMessage, messageArguments);
     }
 
-    //TODO: Remove this hacky crap with something better later
-    /**
-     * Gets the appropriate TextComponent representation of a formatted string from the Locale files.
-     *
-     * @param key The key to look up the string with
-     * @param messageArguments Any arguments to be added to the text component
-     * @return The properly formatted text component
-     */
     public static TextComponent getTextComponent(String key, Object... messageArguments) {
         if (bundle == null) {
             initialize();
@@ -69,9 +54,6 @@ public final class LocaleLoader {
         return formatComponent(rawMessage, messageArguments);
     }
 
-    /**
-     * Reloads locale
-     */
     public static void reloadLocale() {
         bundle = null;
         filesystemBundle = null;

@@ -25,25 +25,12 @@ public final class Motd {
         displayWebsite(player, pluginDescription.getWebsite());
     }
 
-    /**
-     * Display version info.
-     *
-     * @param player  Target player
-     * @param version Plugin version
-     */
     public static void displayVersion(Player player, String version) {
         if (Permissions.showversion(player)) {
             player.sendMessage(LocaleLoader.getString("MOTD.Version.Overhaul", version));
         }
     }
 
-
-    /**
-     * Display website info.
-     *
-     * @param player  Target player
-     * @param website Plugin website
-     */
     public static void displayWebsite(Player player, String website) {
         player.sendMessage(LocaleLoader.getString("MOTD.Website", website));
     }

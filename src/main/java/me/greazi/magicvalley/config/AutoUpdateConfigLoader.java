@@ -63,16 +63,9 @@ public abstract class AutoUpdateConfigLoader extends ConfigLoader {
         Set<String> newKeys = new HashSet<>(internalConfigKeys);
         newKeys.removeAll(configKeys);
 
-        // Don't need a re-save if we have old keys sticking around?
-        // Would be less saving, but less... correct?
         if (!newKeys.isEmpty() || !oldKeys.isEmpty()) {
             needSave = true;
         }
-//
-//        for (String key : oldKeys) {
-//            mcMMO.p.debug("Detected potentially unused key: " + key);
-//            //config.set(key, null);
-//        }
 
         for (String key : newKeys) {
             MVpl.p.debug("Adding new key: " + key + " = " + internalConfig.get(key));
@@ -80,20 +73,15 @@ public abstract class AutoUpdateConfigLoader extends ConfigLoader {
         }
 
         if (needSave) {
-            // Get Bukkit's version of an acceptable config with new keys, and no old keys
             String output = config.saveToString();
 
-            // Convert to the superior 4 space indentation
             output = output.replace("  ", "    ");
 
-            // Rip out Bukkit's attempt to save comments at the top of the file
             while (output.replaceAll("[//s]", "").startsWith("#")) {
                 output = output.substring(output.indexOf('\n', output.indexOf('#')) + 1);
             }
 
-            // Read the internal config to get comments, then put them in the new one
             try {
-                // Read internal
                 BufferedReader reader = new BufferedReader(new InputStreamReader(MVpl.p.getResource(fileName)));
                 LinkedHashMap<String, String> comments = new LinkedHashMap<>();
                 StringBuilder temp = new StringBuilder();
@@ -120,8 +108,6 @@ public abstract class AutoUpdateConfigLoader extends ConfigLoader {
                         }
                     }
                 }
-
-                // Dump to the new one
                 HashMap<String, Integer> indexed = new HashMap<>();
                 for (String key : comments.keySet()) {
                     String actualkey = key.substring(0, key.indexOf(":") + 1);
@@ -143,7 +129,6 @@ public abstract class AutoUpdateConfigLoader extends ConfigLoader {
                 e.printStackTrace();
             }
 
-            // Save it
             if(dataFolder == null) {
                 MVpl.p.getLogger().severe("Data folder should never be null!");
                 return;
@@ -151,7 +136,6 @@ public abstract class AutoUpdateConfigLoader extends ConfigLoader {
 
             try {
                 String saveName = fileName;
-                // At this stage we cannot guarantee that Config has been loaded, so we do the check directly here
                 if (!MVpl.p.getConfig().getBoolean("General.Config_Update_Overwrite", true)) {
                     saveName += ".new";
                 }

@@ -17,9 +17,6 @@ import org.jetbrains.annotations.NotNull;
  *
  */
 
-/*
- * For now this class will only handle ACF converted commands, all other commands will be handled elsewhere
- */
 public class CommandManager {
     public static final @NotNull String MV_DATA_LOADED = "mvDataLoaded";
 

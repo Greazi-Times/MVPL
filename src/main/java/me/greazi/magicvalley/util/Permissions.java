@@ -17,15 +17,12 @@ import org.bukkit.plugin.PluginManager;
 public final class Permissions {
     private Permissions() {}
 
-    /*
-     * GENERAL
-     */
+
+    // GENERAL
     public static boolean motd(Permissible permissible) { return permissible.hasPermission("mvpl.motd"); }
     public static boolean showversion(Permissible permissible) { return permissible.hasPermission("mvpl.showversion"); }
 
-    /*
-     * COMMANDS
-     */
+    //COMMANDS
     public static boolean mvinfo(Permissible permissible) { return permissible.hasPermission("mvpl.commands.mvplinfo"); }
 
     public static boolean mvplDescription(Permissible permissible) { return permissible.hasPermission("mvpl.commands.mvpl.description"); }

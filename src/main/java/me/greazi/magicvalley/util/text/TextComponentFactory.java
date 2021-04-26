@@ -27,17 +27,8 @@ import java.util.List;
  *
  */
 
-/**
- * This class handles many of the JSON components that mcMMO makes and uses
- */
 public class TextComponentFactory {
 
-    /**
-     * Makes a text component using strings from a locale and supports passing an undefined number of variables to the LocaleLoader
-     * @param localeKey target locale string address
-     * @param values vars to be passed to the locale loader
-     * @return
-     */
     public static TextComponent getNotificationMultipleValues(String localeKey, String... values)
     {
         String preColoredString = LocaleLoader.getString(localeKey, (Object[]) values);
@@ -57,12 +48,11 @@ public class TextComponentFactory {
 
     public static void sendPlayerUrlHeader(Player player) {
         TextComponent prefix = Component.text(LocaleLoader.getString("Overhaul.MVpl.Url.Wrap.Prefix") + " ");
-        /*prefix.setColor(ChatColor.DARK_AQUA);*/
         TextComponent suffix = Component.text(" "+LocaleLoader.getString("Overhaul.MVpl.Url.Wrap.Suffix"));
-        /*suffix.setColor(ChatColor.DARK_AQUA);*/
 
         TextComponent emptySpace = Component.space();
 
+        // TODO Sends a null message
         MVpl.getAudiences().player(player).sendMessage(Identity.nil(),TextComponent.ofChildren(
           prefix,
           getWebLinkTextComponent(MVplWebLinks.WEBSITE),
@@ -78,30 +68,19 @@ public class TextComponentFactory {
         ), MessageType.SYSTEM);
     }
 
-    /**
-     * Sends a player a bunch of text components that represent a list of sub-skills
-     * Styling and formatting is applied before sending the messages
-     *
-     * @param player target player
-     * @param subSkillComponents the text components representing the sub-skills by name
-     */
     public static void sendPlayerSubSkillList(@NotNull Player player, @NotNull List<Component> subSkillComponents) {
         final Audience audience = MVpl.getAudiences().player(player);
 
-        //@ Signs, done for style
         Component space = Component.space();
         TextComponent atSignComponent = Component.text(LocaleLoader.getString("JSON.Hover.AtSymbolSkills"));
 
-        //Only send 3 sub-skills per line
         Component[][] splitSubSkills = TextUtils.splitComponentsIntoGroups(subSkillComponents, 3);
         ArrayList<Component> individualLinesToSend = new ArrayList<>();
 
-        //Create each line
         for (Component[] componentArray : splitSubSkills) {
             individualLinesToSend.add(TextUtils.fromArray(componentArray, atSignComponent, space));
         }
 
-        //Send each group
         for(Component curLine : individualLinesToSend) {
             audience.sendMessage(Identity.nil(), curLine);
         }

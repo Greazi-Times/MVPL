@@ -26,7 +26,7 @@ public final class CommandRegistrationManager {
         command.setDescription(LocaleLoader.getString("Commands.Description.mvpl"));
         command.setPermission("mvpl.commands.mvpl.description;mvpl.commands.mvpl.help");
         command.setPermissionMessage(permissionsMessage);
-        command.setUsage(LocaleLoader.getString("Commands.Usage.0", "mvpl"));
+        command.setUsage(LocaleLoader.getString("Commands.Usage.1", "mvpl", "help"));
         command.setUsage(command.getUsage() + "\n" + LocaleLoader.getString("Commands.Usage.1", "mvpl", "help"));
         command.setExecutor(new MVplCommand());
     }

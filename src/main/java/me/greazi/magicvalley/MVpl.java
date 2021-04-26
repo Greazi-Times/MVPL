@@ -30,13 +30,11 @@ import java.nio.charset.StandardCharsets;
 
 public class MVpl extends JavaPlugin {
     /* Managers */
-    private static CommandManager commandManager; //ACF
+    private static CommandManager commandManager;
     private static boolean serverShutdownExecuted = false;
 
-    /* Adventure */
     private static BukkitAudiences audiences;
 
-    /* File Paths */
     private static String mainDirectory;
     private static String localesDirectory;
     private static String flatFileDirectory;
@@ -44,10 +42,8 @@ public class MVpl extends JavaPlugin {
 
     public static MVpl p;
 
-    // Jar Stuff
     public static File mvpl;
 
-    // Config Validation Check
     public boolean noErrorsInConfigFiles = true;
 
     public static FixedMetadataValue metadataValue;
@@ -100,7 +96,7 @@ public class MVpl extends JavaPlugin {
 
         commandManager = new CommandManager(this);
 
-        setServerShutdown(false); //Reset flag, used to make decisions about async saves
+        setServerShutdown(false);
         LocaleLoader.reloadLocale();
     }
 
@@ -113,7 +109,6 @@ public class MVpl extends JavaPlugin {
         MVpl.p.getLogger().info("Server shutdown has been executed, saving and cleaning up data...");
 
         if (generalConfig.getBackupsEnabled()) {
-            // Remove other tasks BEFORE starting the Backup, or we just cancel it straight away.
             try {
                 ZipLibrary.mcMMOBackup();
             }
@@ -130,11 +125,11 @@ public class MVpl extends JavaPlugin {
         }
 
         debug("Canceling all tasks...");
-        getServer().getScheduler().cancelTasks(this); // This removes our tasks
+        getServer().getScheduler().cancelTasks(this);
         debug("Unregister all events...");
-        HandlerList.unregisterAll(this); // Cancel event registrations
+        HandlerList.unregisterAll(this);
 
-        debug("Was disabled."); // How informative!
+        debug("Was disabled.");
     }
 
     public static String getMainDirectory() {
@@ -157,15 +152,12 @@ public class MVpl extends JavaPlugin {
         getLogger().info("[Debug] " + message);
     }
 
-    /**
-     * Setup the various storage file paths
-     */
     private void setupFilePaths() {
         mvpl = getFile();
         mainDirectory = getDataFolder().getPath() + File.separator;
         localesDirectory = mainDirectory + "locales" + File.separator;
         flatFileDirectory = mainDirectory + "flatfile" + File.separator;
-        usersFile = flatFileDirectory + "mcmmo.users";
+        usersFile = flatFileDirectory + "mvpl.users";
         fixFilePaths();
     }
 
