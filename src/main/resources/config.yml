@@ -15,48 +15,72 @@
 #   MagicValley-Plugin configuration
 #   Last updated on ${project.version}-b${buildNumber}
 #
+#   This file contains all the settings of the plugin features can be simpy disabled and enabled.
 #
+#   Why did I make a config file even tho it is a custom made plugin for MagicValley?
+#   I have chosen to create a config file to enable and disable feature faster. If there is a
+#   feature that causes to make the server performance worse, than it can be disabled with chaining a simple
+#   value of the config.
 #
+#   Keep in mind most of the values need to be True or False.
 #
-#
-#
-#
-#
+#   Every feature has a detail explanation, possible values and a default value.
 #
 
-
 #
-
-#
-#####
-
-#
-#  Settings for MVpl in general
-###
+# Settings for MVpl in general
+# All the general settings for the implemented features.
 General:
-    Locale: en_US
-    MOTD_Enabled: true
-    EventBroadcasts: true
-    EventInfoOnPlayerJoin: true
-    AdminNotifications: true
-#
-#  Settings for Backups
-#  Allow mcMMO to create zip backups for config files and flatfile data on shutdown.
-###
+    # The language file that is going to be taken by the plugin
+    # Possible values: en_US
+    Locale: en_US # Default = en_US
+
+    # Will the MOTD of MVPL be show to staff members. This message contains the version and what has been added with the last update.
+    # Possible values: true/false
+    MOTD_Enabled: true # Default = true
+
+    # When there is a event going to be started or is starting will this the broadcasted on the server?
+    # Possible values: true/false
+    EventBroadcasts: true # Default = true
+
+    # When there is a event going on will the player be notified?
+    # Possible values: true/false
+    EventInfoOnPlayerJoin: true # Default = true
+
+    # Will admin get notifications from MVpl?
+    # Possible values: true/false
+    AdminNotifications: true # Default = true
+
+
+# Settings for Backups
+# Allow MVpl to create zip backups for config files on shutdown.
 Backups:
-    Enabled: true
+    # Does the plugin create backups of the files?
+    # Possible values: true/false
+    Enabled: true # Default = true
 
     Keep:
-        Last_24_Hours: true
-        Daily_Last_Week: true
-        Weekly_Past_Months: true
+        # Does it need to keep the last 24 hours
+        # Possible values: true/false
+        Last_24_Hours: true # Default = true
+
+        # Does it need to keep the last week
+        # Possible values: true/false
+        Daily_Last_Week: true # Default = true
+
+        # Does it need to keep the last month
+        # Possible values: true/false
+        Weekly_Past_Months: true # Default = true
 
 #
 #  Settings for commands
 ###
 Commands:
-    mcmmo:
-        Donate_Message: true
+    mvpl:
+        # Does it need to send a donation message
+        # Possible values: true/false
+        Donate_Message: true # Default = true
+
 
 ##################################################
 ################# Do Not Touch ###################
