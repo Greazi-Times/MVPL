@@ -8,7 +8,7 @@
 #  
 name: MVpl
 version: 1.1.149
-build: 67
+build: 68
 description: >
   MagicValleyPlugin (For short MVPL), is a custom made plugin for MagicValley.
   The goal of this plugin is to take MagicValley to the next level.
