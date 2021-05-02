@@ -1,14 +1,17 @@
 me\greazi\magicvalley\config\Config.class
+me\greazi\magicvalley\util\help\HelpPage1.class
 me\greazi\magicvalley\util\text\StringUtils.class
 me\greazi\magicvalley\json\MVplUrl.class
 me\greazi\magicvalley\commands\admin\MVplReloadLocaleCommand.class
 me\greazi\magicvalley\json\CustomBaseComponent.class
+me\greazi\magicvalley\util\help\HelpMain.class
 me\greazi\magicvalley\util\text\TextComponentFactory.class
 me\greazi\magicvalley\util\Motd.class
 me\greazi\magicvalley\util\text\ColorUtil.class
 me\greazi\magicvalley\commands\test\MVTest.class
 me\greazi\magicvalley\MVpl.class
 me\greazi\magicvalley\commands\MVplCommand.class
+me\greazi\magicvalley\util\help\HelpPage2.class
 me\greazi\magicvalley\util\commands\CommandUtils.class
 me\greazi\magicvalley\util\Permissions.class
 me\greazi\magicvalley\util\text\TextUtils.class
@@ -26,3 +29,4 @@ me\greazi\magicvalley\util\commands\CommandRegistrationManager.class
 me\greazi\magicvalley\util\text\TextComponentFactory$1.class
 me\greazi\magicvalley\commands\admin\MVplReloadLocaleCommand$1.class
 me\greazi\magicvalley\config\ConfigLoader.class
+me\greazi\magicvalley\util\help\Commands.class
