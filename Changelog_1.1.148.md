@@ -1,8 +1,8 @@
-# **Version 1.1.148**
+# **Version 1.1.148 and 1.1.149**
 
 ### Please use Spigot or Paper!
 
-* **mcMMO is now built against Spigot-API instead of Bukkit**
+* **MVpl is now built against Spigot-API instead of Bukkit**
 
 
 ### Localization File
