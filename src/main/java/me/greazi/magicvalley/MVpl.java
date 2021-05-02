@@ -54,9 +54,6 @@ public class MVpl extends JavaPlugin {
         p = this;
     }
 
-    /**
-     * Things to be run when the plugin is enabled.
-     */
     @Override
     public void onEnable() {
         //try {
@@ -94,15 +91,13 @@ public class MVpl extends JavaPlugin {
             return;
         }*/
 
+        audiences = BukkitAudiences.create(this);
         commandManager = new CommandManager(this);
 
         setServerShutdown(false);
         LocaleLoader.reloadLocale();
     }
 
-    /**
-     * Things to be run when the plugin is disabled.
-     */
     @Override
     public void onDisable() {
         setServerShutdown(true);
@@ -181,8 +176,6 @@ public class MVpl extends JavaPlugin {
 
         // Register events
     }
-
-
 
     public @Nullable InputStreamReader getResourceAsReader(@NotNull String fileName) {
         InputStream in = getResource(fileName);

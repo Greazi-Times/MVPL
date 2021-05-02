@@ -45,7 +45,7 @@ public final class CommandRegistrationManager {
         command.setDescription(LocaleLoader.getString("Commands.Description.mvtest"));
         command.setPermission("mvpl.commands.test");
         command.setPermissionMessage(permissionsMessage);
-        command.setUsage(LocaleLoader.getString("Commands.Usage.0", "mvtest"));
+        command.setUsage(LocaleLoader.getString("Commands.Usage.1", "mvtest", "help"));
         command.setExecutor(new MVTest());
     }
 

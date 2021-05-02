@@ -78,7 +78,7 @@ public class TextUtils {
     }
 
     static void addChildWebComponent(@NotNull ComponentBuilder<?, ?> webTextComponent, @NotNull String childName) {
-        TextComponent childComponent = Component.text(childName).color(NamedTextColor.BLUE);
+        TextComponent childComponent = Component.text(childName).color(NamedTextColor.GOLD);
         webTextComponent.append(childComponent);
     }
 

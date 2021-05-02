@@ -4,8 +4,9 @@ import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.config.Config;
 import me.greazi.magicvalley.locale.LocaleLoader;
 import me.greazi.magicvalley.util.Permissions;
+import me.greazi.magicvalley.util.help.HelpPage1;
+import me.greazi.magicvalley.util.help.HelpPage2;
 import me.greazi.magicvalley.util.text.TextComponentFactory;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -36,17 +37,21 @@ public class MVplCommand implements CommandExecutor {
                 String description = LocaleLoader.getString("mvpl.Description");
                 String[] mcSplit = description.split(",");
                 sender.sendMessage(mcSplit);
+                sender.sendMessage("§c ");
+
                 String devDescription = LocaleLoader.getString("mvpl.Description.Dev");
                 String[] mcSplit2 = devDescription.split(",");
                 sender.sendMessage(mcSplit2);
-                // TODO This sends a null messsage caused by TextComponentFactory line 66
-                TextComponentFactory.sendPlayerUrlHeader(player);
+                sender.sendMessage("§c ");
 
                 if (Config.getInstance().getDonateMessageEnabled()) {
                     String donate = LocaleLoader.getString("MOTD.Donate");
                     String[] mcSplit3 = donate.split(",");
                     sender.sendMessage(mcSplit3);
+                    sender.sendMessage("§c ");
                 }
+
+                TextComponentFactory.sendPlayerUrlHeader(player);
 
                 if (Permissions.showversion(sender)) {
                     sender.sendMessage(LocaleLoader.getString("MOTD.Version", MVpl.p.getDescription().getVersion()));
@@ -61,8 +66,27 @@ public class MVplCommand implements CommandExecutor {
                         return true;
                     }
 
-                    sender.sendMessage(LocaleLoader.getString("Commands.mv.Header"));
-                    displayGeneralCommands(sender);
+                    HelpPage1.HelpPage1(sender);
+
+                }
+                return true;
+
+            case 2:
+                if (args[0].equalsIgnoreCase("?") || args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("commands")) {
+                    if (!Permissions.mvplHelp(sender)) {
+                        sender.sendMessage(command.getPermissionMessage());
+                        return true;
+                    }
+                    if (args[1].equalsIgnoreCase("1")) {
+                        HelpPage1.HelpPage1(sender);
+                        return true;
+                    }
+                    if (args[1].equalsIgnoreCase("2")) {
+                        HelpPage2.HelpPage2(sender);
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
                 return true;
 
@@ -70,12 +94,4 @@ public class MVplCommand implements CommandExecutor {
                 return false;
         }
     }
-
-    private void displayGeneralCommands(CommandSender sender) {
-        sender.sendMessage(ChatColor.DARK_AQUA + " /mcstats " + LocaleLoader.getString("Commands.Stats"));
-        sender.sendMessage(ChatColor.DARK_AQUA + " /<skill>" + LocaleLoader.getString("Commands.SkillInfo"));
-        sender.sendMessage(ChatColor.DARK_AQUA + " /mctop " + LocaleLoader.getString("Commands.Leaderboards"));
-    }
-
-
 }

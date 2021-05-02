@@ -4,7 +4,6 @@ import me.greazi.magicvalley.MVpl;
 import me.greazi.magicvalley.json.MVplUrl;
 import me.greazi.magicvalley.json.MVplWebLinks;
 import me.greazi.magicvalley.locale.LocaleLoader;
-import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.audience.MessageType;
 import net.kyori.adventure.identity.Identity;
 import net.kyori.adventure.text.Component;
@@ -13,10 +12,6 @@ import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  *
@@ -52,7 +47,6 @@ public class TextComponentFactory {
 
         TextComponent emptySpace = Component.space();
 
-        // TODO Sends a null message
         MVpl.getAudiences().player(player).sendMessage(Identity.nil(),TextComponent.ofChildren(
           prefix,
           getWebLinkTextComponent(MVplWebLinks.WEBSITE),
@@ -66,24 +60,6 @@ public class TextComponentFactory {
           getWebLinkTextComponent(MVplWebLinks.HELP_TRANSLATE),
           suffix
         ), MessageType.SYSTEM);
-    }
-
-    public static void sendPlayerSubSkillList(@NotNull Player player, @NotNull List<Component> subSkillComponents) {
-        final Audience audience = MVpl.getAudiences().player(player);
-
-        Component space = Component.space();
-        TextComponent atSignComponent = Component.text(LocaleLoader.getString("JSON.Hover.AtSymbolSkills"));
-
-        Component[][] splitSubSkills = TextUtils.splitComponentsIntoGroups(subSkillComponents, 3);
-        ArrayList<Component> individualLinesToSend = new ArrayList<>();
-
-        for (Component[] componentArray : splitSubSkills) {
-            individualLinesToSend.add(TextUtils.fromArray(componentArray, atSignComponent, space));
-        }
-
-        for(Component curLine : individualLinesToSend) {
-            audience.sendMessage(Identity.nil(), curLine);
-        }
     }
 
     private static Component getWebLinkTextComponent(MVplWebLinks webLinks)
@@ -137,33 +113,35 @@ public class TextComponentFactory {
                 addUrlHeaderHover(webLinks, componentBuilder);
                 componentBuilder.append(Component.newline()).append(Component.newline());
                 componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
-                componentBuilder.append(Component.text("\nDev Blogs, and information related to mcMMO can be found here", NamedTextColor.GRAY));
+                componentBuilder.append(Component.text("\nInformation about MagicValley can be found here", NamedTextColor.DARK_GRAY));
                 break;
             case PATREON:
                 addUrlHeaderHover(webLinks, componentBuilder);
                 componentBuilder.append(Component.newline()).append(Component.newline());
                 componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
                 componentBuilder.append(Component.newline());
-                componentBuilder.append(Component.text("Show support by buying me a coffee :)", NamedTextColor.GRAY));
+                componentBuilder.append(Component.text("Show support by helping me financially", NamedTextColor.DARK_GRAY));
                 break;
             case WIKI:
                 addUrlHeaderHover(webLinks, componentBuilder);
                 componentBuilder.append(Component.newline()).append(Component.newline());
                 componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
                 componentBuilder.append(Component.newline());
-                componentBuilder.append(Component.text("I'm looking for more wiki staff, contact me on our discord!", NamedTextColor.DARK_GRAY));
+                componentBuilder.append(Component.text("Need some help? The wiki's will explain everything!", NamedTextColor.DARK_GRAY));
                 break;
             case DISCORD:
                 addUrlHeaderHover(webLinks, componentBuilder);
                 componentBuilder.append(Component.newline()).append(Component.newline());
                 componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
+                componentBuilder.append(Component.newline());
+                componentBuilder.append(Component.text("Join our discord server!", NamedTextColor.DARK_GRAY));
                 break;
             case HELP_TRANSLATE:
                 addUrlHeaderHover(webLinks, componentBuilder);
                 componentBuilder.append(Component.newline()).append(Component.newline());
                 componentBuilder.append(Component.text(webLinks.getLocaleDescription(), NamedTextColor.GREEN));
                 componentBuilder.append(Component.newline());
-                componentBuilder.append(Component.text("You can use this website to help translate mcMMO into your language!" +
+                componentBuilder.append(Component.text("We are working on translating the server to more languages!" +
                   "\nIf you want to know more contact me in discord.", NamedTextColor.DARK_GRAY));
         }
 
@@ -178,6 +156,12 @@ public class TextComponentFactory {
     private static ClickEvent getUrlClickEvent(String url)
     {
         return ClickEvent.openUrl(url);
+    }
+
+    private static TextComponent.Builder getNewComponentBuilder(String skillName) {
+        TextComponent.Builder componentBuilder = Component.text().content(skillName);
+        componentBuilder.append(Component.newline());
+        return componentBuilder;
     }
 
 }
