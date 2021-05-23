@@ -20,6 +20,10 @@ on:
     paths:
     - 'src/**'
     - 'pom.xml'
+env:
+  path: build/MVPL.jar
+  name: MVPL.jar
+  build: build-${{ github.run_number }}
 
 jobs:
   compile:
@@ -49,3 +53,22 @@ jobs:
     # 4. Build via Maven 
     - name: Build via Maven
       run: mvn verify -B --file pom.xml
+    - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.build }}
+          release_name: Release ${{ env.build }}
+
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ env.path }}
+        asset_name: ${{ env.name }}
+        asset_content_type: application/java-archive
