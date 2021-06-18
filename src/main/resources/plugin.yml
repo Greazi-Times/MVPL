@@ -45,6 +45,7 @@ permissions:
     default: true
     description: The permission cluster for the default players
     children:
+      ## Default permissions
       mvpl.commands.mvpl: true
 
   ### Magician ###
@@ -52,32 +53,47 @@ permissions:
     default: false
     description: The permission cluster for the rank Magician
     children:
+      ## previous cluster
       mvpl.default: true
+      ## Magician permissions
 
-  ### Op ###
-  mvpl.op:
-    default: op
-    description: The permission cluster for oped players
+  ### Staff ###
+  mvpl.staff:
+    default: false
+    description: The permission cluster for staff members
     children:
-      mvpl.commands.reloadlocale: true
-      mvpl.commands.test: true
+      ## previous cluster
+      mvpl.magicvain: true
+      ## staff permissions
+      mvpl.commands.models: true
+
       
   ### All permissions ###
   mvpl.*:
     default: false
     description: The permission cluster to give all the permissions
     children:
-      mvpl.default: true
-      mvpl.op: true
+      ## previous cluster
+      mvpl.staff: true
+      ## Admin permissions
+      mvpl.commands.reloadlocale: true
+      mvpl.commands.test: true
 
   ##################################
   #            Commands            #
   ##################################
 
-  ### Commands ###
+  ### Default ###
   mvpl.commands.mvpl:
     default: false
-    description: The permission to use the test command
+    description: The permission to use the main command /mvpl
+
+  ### Staff ###
+  mvpl.commands.models:
+    default: false
+    description: The permission to use /md or /model or /models
+
+  ### Admin ###
   mvpl.commands.reloadlocale:
     default: false
     description: The command to reload the language file
