@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.greazi.magicvalley.mcMMO</groupId>
+    <groupId>me.greazi.magicvalley.MVPL</groupId>
     <artifactId>mvpl</artifactId>
     <version>1.1.149</version>
     <name>MVpl</name>
@@ -253,27 +253,27 @@
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-text-serializer-gson</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.1</version>
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-api</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.1</version>
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-nbt</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.1</version>
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-key</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.1</version>
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-text-serializer-gson-legacy-impl</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.1</version>
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
@@ -366,6 +366,13 @@
             <artifactId>annotations</artifactId>
             <version>19.0.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>fr.minuskube.inv</groupId>
+            <artifactId>smart-invs</artifactId>
+            <version>1.2.7</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
