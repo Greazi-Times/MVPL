@@ -10,8 +10,6 @@ import org.junit.Test;
  * Normally we can rely on this to be the case. However sometimes our dependencies
  * lack so far behind that things stop working correctly.
  * This test ensures that basic functionality is guaranteed to work as we would expect.
- * 
- * See https://github.com/mcMMO-Dev/mcMMO/pull/4446
  *
  */
 public class TextUtilsTest {
@@ -26,7 +24,6 @@ public class TextUtilsTest {
          */
         TextComponent component = TextUtils.colorizeText(inputText);
 
-        Assert.assertEquals("Looks like Adventure is not working correctly.",
-                NamedTextColor.DARK_RED, component.color());
+        Assert.assertEquals("Looks like Adventure is not working correctly.", NamedTextColor.DARK_RED, component.color());
     }
 }
