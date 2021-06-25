@@ -20,7 +20,7 @@ public class ZipLibrary {
     private static final File FLAT_FILE_DIRECTORY = new File(MVpl.getFlatFileDirectory());
     private static final File CONFIG_FILE = new File(MVpl.getMainDirectory() + "config.yml");
 
-    public static void mcMMOBackup() throws IOException {
+    public static void MVPLBackup() throws IOException {
         try {
             if (BACKUP_DIR.mkdir()) {
                 MVpl.p.debug("Created Backup Directory.");
