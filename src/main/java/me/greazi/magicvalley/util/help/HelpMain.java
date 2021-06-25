@@ -5,6 +5,15 @@ import me.greazi.magicvalley.locale.LocaleLoader;
 import me.greazi.magicvalley.util.text.ColorUtil;
 import net.md_5.bungee.api.ChatColor;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public class HelpMain {
 	public static String[] getHelpHeader() {
 		return new String[] { ColorUtil.addColors("&8"), ColorUtil.addColors("&8") +

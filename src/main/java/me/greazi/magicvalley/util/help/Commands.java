@@ -8,6 +8,15 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.command.CommandSender;
 
+/*
+ *
+ * Copyright © Greazi 2020 | All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * Proprietary and confidential.
+ * Written by Greazi
+ *
+ */
+
 public class Commands {
 	public static void MVplCommand(CommandSender sender) {
 		TextComponent mvplCommand = new TextComponent(LocaleLoader.getString("Commands.Command.MVpl"));
