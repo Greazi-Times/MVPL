@@ -47,7 +47,7 @@ public class Config extends AutoUpdateConfigLoader {
     //GENERAL SETTINGS
     public String getLocale() { return config.getString("General.Locale", "en_us"); }
     public boolean getMOTDEnabled() { return config.getBoolean("General.MOTD_Enabled", true); }
-    public boolean getDonateMessageEnabled() { return config.getBoolean("Commands.mcmmo.Donate_Message", true); }
+    public boolean getDonateMessageEnabled() { return config.getBoolean("Commands.MVPL.Donate_Message", true); }
     public int getSaveInterval() { return config.getInt("General.Save_Interval", 10); }
 
     public boolean getMatchOfflinePlayers() { return config.getBoolean("Commands.Generic.Match_OfflinePlayers", false); }
@@ -57,6 +57,12 @@ public class Config extends AutoUpdateConfigLoader {
     public boolean getKeepLast24Hours() { return config.getBoolean("Backups.Keep.Last_24_Hours", true); }
     public boolean getKeepDailyLastWeek() { return config.getBoolean("Backups.Keep.Daily_Last_Week", true); }
     public boolean getKeepWeeklyPastMonth() { return config.getBoolean("Backups.Keep.Weekly_Past_Months", true); }
+
+    /* Armorstand */
+    public boolean getLeftClickEnabled() { return config.getBoolean("modules.ascmd.leftclick", true); }
+
+    /* Config Version */
+    public int getConfigVersion() { return config.getInt("ConfigVersion"); }
 
     private String getStringIncludingInts(String key) {
         String str = config.getString(key);

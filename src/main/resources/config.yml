@@ -81,8 +81,13 @@ Commands:
         # Possible values: true/false
         Donate_Message: true # Default = true
 
+Modules:
+    ascmd:
+        # Does it excecute the command on left clicking the armor_stand
+        # Possible values: true/false
+        leftclick: true # Default = true
 
 ##################################################
 ################# Do Not Touch ###################
 ##################################################
-ConfigVersion: 1.1.149
+ConfigVersion: 1.149
