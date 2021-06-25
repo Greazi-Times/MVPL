@@ -8,7 +8,6 @@ import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.shatteredlands.shatt.backup.ZipLibrary;
 import org.bukkit.event.HandlerList;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -56,7 +55,7 @@ public class MVpl extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        //try {
+         try {
             generalConfig = new GeneralConfig(getDataFolder());
 
             metadataValue = new FixedMetadataValue(this, true);
@@ -67,29 +66,32 @@ public class MVpl extends JavaPlugin {
                 return;
             }
 
-
-            registerEvents();
+            loadConfigFiles();
 
             debug("Version " + getDescription().getVersion() + " is enabled!");
 
             CommandRegistrationManager.registerCommands();
-        //}
 
-        /*catch (Throwable t) {
-            getLogger().severe("There was an error while enabling mcMMO!");
+            if (getGeneralConfig().getConfigVersion() != 1.149) {
+                debug("Your config isn't up to date");
+            }
+        }
+
+        catch (Throwable t) {
+            getLogger().severe("There was an error while enabling MVPL!");
 
             if (!(t instanceof ExceptionInInitializerError)) {
                 t.printStackTrace();
             }
             else {
-                getLogger().info("Please do not replace the mcMMO jar while the server is running.");
+                getLogger().info("Please do not replace the MVPL jar while the server is running.");
             }
 
             getServer().getPluginManager().disablePlugin(this);
 
-            //Fixes #4438 - Don't initialize things if we are going to disable mcMMO anyway
+            //Fixes #4438 - Don't initialize things if we are going to disable MVPL anyway
             return;
-        }*/
+        }
 
         audiences = BukkitAudiences.create(this);
         commandManager = new CommandManager(this);
@@ -105,14 +107,14 @@ public class MVpl extends JavaPlugin {
 
         if (generalConfig.getBackupsEnabled()) {
             try {
-                ZipLibrary.mcMMOBackup();
+                ZipLibrary.MVPLBackup();
             }
             catch (IOException e) {
                 getLogger().severe(e.toString());
             }
             catch(NoClassDefFoundError e) {
                 getLogger().severe("Backup class not found!");
-                getLogger().info("Please do not replace the mcMMO jar while the server is running.");
+                getLogger().info("Please do not replace the MVPL jar while the server is running.");
             }
             catch (Throwable e) {
                 getLogger().severe(e.toString());
@@ -125,6 +127,10 @@ public class MVpl extends JavaPlugin {
         HandlerList.unregisterAll(this);
 
         debug("Was disabled.");
+    }
+
+    private void loadConfigFiles() {
+        // Force the loading of config files
     }
 
     public static String getMainDirectory() {
@@ -169,12 +175,6 @@ public class MVpl extends JavaPlugin {
         currentFlatfilePath.mkdirs();
         File localesDirectoryPath = new File(localesDirectory);
         localesDirectoryPath.mkdirs();
-    }
-
-    private void registerEvents() {
-        PluginManager pluginManager = getServer().getPluginManager();
-
-        // Register events
     }
 
     public @Nullable InputStreamReader getResourceAsReader(@NotNull String fileName) {
