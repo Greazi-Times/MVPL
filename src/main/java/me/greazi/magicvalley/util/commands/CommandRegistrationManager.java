@@ -19,14 +19,14 @@ import org.bukkit.command.PluginCommand;
 public final class CommandRegistrationManager {
     private CommandRegistrationManager() {}
 
-    private static final String permissionsMessage = LocaleLoader.getString("mcMMO.NoPermission");
+    private static final String permissionsMessage = LocaleLoader.getString("MVPL.NoPermission");
 
     private static void registerMvplCommand() {
         PluginCommand command = MVpl.p.getCommand("mvpl");
         command.setDescription(LocaleLoader.getString("Commands.Description.mvpl"));
         command.setPermission("mvpl.commands.mvpl.description;mvpl.commands.mvpl.help");
         command.setPermissionMessage(permissionsMessage);
-        command.setUsage(LocaleLoader.getString("Commands.Usage.1", "mvpl", "help"));
+        command.setUsage(LocaleLoader.getString("Commands.Usage.0", "mvpl"));
         command.setUsage(command.getUsage() + "\n" + LocaleLoader.getString("Commands.Usage.1", "mvpl", "help"));
         command.setExecutor(new MVplCommand());
     }
@@ -48,6 +48,15 @@ public final class CommandRegistrationManager {
         command.setUsage(LocaleLoader.getString("Commands.Usage.1", "mvtest", "help"));
         command.setExecutor(new MVTest());
     }
+
+   /* private static void registerAsCommand() {
+        PluginCommand command = MVpl.p.getCommand("ascmd");
+        command.setDescription(LocaleLoader.getString("Commands.Description.ascmd"));
+        command.setPermission("mvpl.commands.mvpl.ascmd");
+        command.setPermissionMessage(permissionsMessage);
+        command.setUsage(LocaleLoader.getString("Commands.Usage.0", "ascmd"));
+        command.setExecutor(new ArmorStandCmd());
+    } */
 
     public static void registerCommands() {
         // Generic Commands
